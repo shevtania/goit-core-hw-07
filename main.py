@@ -24,7 +24,7 @@ def greeting():
     return 'How can I help you?'
 
 # add contact in dict and check the number of args
-#@input_error
+@input_error
 def add_contact(*args):
     name, phone, *_ = args
     record = book.find(name)
@@ -37,7 +37,7 @@ def add_contact(*args):
         record.add_phone(phone)
     return message
     
-#@input_error
+@input_error
 def add_phone(*args):
     name, phone, *_ = args
     record = book.find(name)
@@ -49,7 +49,7 @@ def add_phone(*args):
     return message
 
 # check the number of args, change phone of contact 
-#@input_error
+@input_error
 def change_contact(*args):
     #if len(args) < 2:
     #    return 'Not enough arguments'
@@ -63,7 +63,7 @@ def change_contact(*args):
     return message
 
 # check contacts existance and show contact information when contacts exist
-#@input_error
+@input_error
 def show_phone(*args):
     name, *_ = args
     record = book.find(name)
@@ -77,7 +77,7 @@ def show_phone(*args):
 def show_all():
     return book
     
-#@input_error
+@input_error
 def add_birthday(*args):
     name, birthday, *_ = args
     record = book.find(name)
@@ -88,7 +88,7 @@ def add_birthday(*args):
         message = f"Contact  {name} birthday is added."
     return message
 
-#@input_error
+@input_error
 def show_birthday(*args):
     name, *_ = args
     record = book.find(name)
@@ -98,7 +98,7 @@ def show_birthday(*args):
         message = record.birthday.value
     return message    
 
-#@input_error
+@input_error
 def birthdays():
     bith_list = book.get_upcoming_birthdays()
     if not bith_list:
